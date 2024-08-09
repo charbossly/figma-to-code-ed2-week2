@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Archivo */
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-ExtraBoldItalic.otf")
+    format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-SemiBoldItalic.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-MediumItalic.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-ExtraLightItalic.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/Archivo_Complete/Archivo-ThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Chillax */
+@font-face {
+  font-family: "Chillax";
+  src: url("/fonts/Chillax_Complete/Chillax-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax";
+  src: url("/fonts/Chillax_Complete/Chillax-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax";
+  src: url("/fonts/Chillax_Complete/Chillax-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax";
+  src: url("/fonts/Chillax_Complete/Chillax-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax";
+  src: url("/fonts/Chillax_Complete/Chillax-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax";
+  src: url("/fonts/Chillax_Complete/Chillax-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Shadow logo */
+.text-shadowLogo {
+  text-shadow: -1px -1px 0, 1px -1px 0 #1d1d1d, -1px 1px 0 #1d1d1d,
+    1px 1px 0 #1d1d1d;
+}
