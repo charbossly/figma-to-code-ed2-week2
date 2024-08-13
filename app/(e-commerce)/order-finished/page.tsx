@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 type Props = {};
 
-export default function page({}: Props) {
+export default function Page({}: Props) {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <Image

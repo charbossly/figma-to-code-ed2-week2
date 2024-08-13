@@ -11,7 +11,7 @@ type Props = {
   };
 };
 
-export default async function page({ params }: Props) {
+export default async function Page({ params }: Props) {
   const decodedSlug = decodeURIComponent(params.slug as string);
   const product = getColorsAndSizes(await fetchProductById(decodedSlug));
   return (

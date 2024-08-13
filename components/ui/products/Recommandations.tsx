@@ -15,7 +15,7 @@ export default async function Recommandations({ product }: Props) {
     <div className="grid grid-flow-col gap-x-4">
       {" "}
       {products.map((prod: any, index: number) => (
-        <div className="w-[350px]">
+        <div className="w-[350px]" key={index}>
           <ProductItem key={prod.node.id} product={prod} />
         </div>
       ))}

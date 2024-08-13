@@ -11,7 +11,7 @@ type Props = {
   product: any;
 };
 
-export default function product({ product: product }: Props) {
+export default function Product({ product: product }: Props) {
   const { addToCart } = useCart();
 
   const [productImage, setProductImage] = React.useState(
