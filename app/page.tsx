@@ -1,15 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
-import Hero from "./_components/Hero";
-import Collection from "./_components/Collection";
-import ProductList from "./_components/ProductsList";
-import Infos from "./_components/Infos";
+import Hero from "@/components/ui/Hero";
+import Collection from "@/components/ui/Collection";
+import HomeProductListSection from "@/components/ui/products/HomeProductListSection";
+import Infos from "@/components/ui/Infos";
+
 export default function Home() {
   return (
     <>
       <Hero />
       <Infos />
-      <ProductList />
+      <HomeProductListSection />
       <Collection />
     </>
   );

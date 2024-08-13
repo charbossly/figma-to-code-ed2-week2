@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navLinksLeft, navLinksRight, mobileNavLinks } from "../constants";
+import { navLinksLeft, navLinksRight, mobileNavLinks } from "@/constants";
 
 type Props = {};
 
@@ -38,7 +38,7 @@ export default function Nav({}: Props) {
             )
           )}
         </div>
-        <h1 className="text-whiteUi uppercase text-t30 font-Chillax  cursor-pointer font-semibold text-shadowLogo">
+        <h1 className="uppercase text-[#4a4a4a00] text-t30 font-Chillax  cursor-pointer font-semibold text-customStroke">
           <Link href="/">Ballamas</Link>
         </h1>
         <div className="hidden xl:flex items-center space-x-6">

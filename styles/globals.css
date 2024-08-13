@@ -129,7 +129,7 @@
 }
 @font-face {
   font-family: "Chillax";
-  src: url("/fonts/Chillax_Complete/Chillax-SemiBold.otf") format("opentype");
+  src: url("/fonts/Chillax_Complete/Chillax-Semibold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
 }
@@ -158,8 +158,12 @@
   font-style: normal;
 }
 
-/* Shadow logo */
-.text-shadowLogo {
-  text-shadow: -1px -1px 0, 1px -1px 0 #1d1d1d, -1px 1px 0 #1d1d1d,
-    1px 1px 0 #1d1d1d;
+.text-customStroke {
+  font-stretch: 0;
+  color: #4a4a4a00;
+  -webkit-text-stroke: 0.03em white;
+  paint-order: stroke fill;
+}
+.scrollbar-none {
+  scrollbar-width: none;
 }

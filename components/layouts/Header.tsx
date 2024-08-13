@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "./Nav";
-import NavBanner from "./NavBanner";
-import Layout from "./Layout";
+import Nav from "@/components/ui/Nav";
+import NavBanner from "@/components/ui/NavBanner";
+import Layout from "@/components/layouts/Layout";
 type Props = {};
 
 export default function Header({}: Props) {

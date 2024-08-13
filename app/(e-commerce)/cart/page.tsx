@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 
@@ -7,7 +5,7 @@ type Props = {};
 
 export default function page({}: Props) {
   return (
-    <div className="max-w-screen-lg mx-auto flex flex-col items-center lg:flex-row p-4 px-6 my-12 gap-[42px] lg:items-start">
+    <div className=" flex flex-col items-center lg:flex-row  my-12 gap-[42px] lg:items-start">
       <div className="w-full lg:w-2/3">
         <div className="flex justify-between items-center my-5">
           <h2 className="text-t24 font-Chillax font-semibold text-blackUi">
@@ -40,15 +38,19 @@ export default function page({}: Props) {
           <tbody>
             <tr className="border-b border-border">
               <td className="p-2 py-4">
-                <div className="flex flex-row gap-x-2 items-center">
-                  <Image
-                    src={"/images/imageThumb.png"}
-                    alt="image"
-                    //check if mobile or desktop
-                    width={window.innerWidth > 768 ? 72 : 50}
-                    height={window.innerWidth > 768 ? 72 : 50}
-                    className="rounded-lg object-cover object-center"
-                  />
+                <div className="flex flex-row gap-x-2 items-center relative">
+                  <div className="w-full h-[72px] overflow-hidden relative">
+                    <Image
+                      src={"/images/imageThumb.png"}
+                      alt="image"
+                      //check if mobile or desktop
+                      //width={window.innerWidth > 768 ? 72 : 50}
+                      //height={window.innerWidth > 768 ? 72 : 50}
+                      sizes="100vw, 72px"
+                      fill
+                      className="rounded-lg object-cover object-center"
+                    />
+                  </div>
                   <div className="flex flex-col">
                     <span className="font-bold font-Archivo text-t10 md:text-t14 text-blackUi">
                       T-Shirt

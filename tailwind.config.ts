@@ -7,6 +7,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "375px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1440px",
+    },
     extend: {
       colors: {
         whiteUi: "#FFFFFF",
@@ -30,9 +36,11 @@ const config: Config = {
         t16: "16px",
         t18: "18px",
         t20: "20px",
+        t24: "24px",
         t28: "28px",
         t30: "30px",
         t36: "36px",
+        t42: "42px",
         t48: "48px",
       },
 

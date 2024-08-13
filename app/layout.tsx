@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Header from "./_components/Header";
-import Footer from "./_components/Footer";
-import Layout from "./_components/Layout";
+import "@/styles/globals.css";
+import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
+import Layout from "@/components/layouts/Layout";
 
 export const metadata: Metadata = {
   title: "Ballamas",
@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={"bg-whiteUi font-Archivo"}>
         <Header />
-        <main className="min-h-screen relative w-full py-24">
+        <main className="min-h-screen relative w-full py-[40px]">
           <Layout>{children}</Layout>
         </main>
         <Footer />
