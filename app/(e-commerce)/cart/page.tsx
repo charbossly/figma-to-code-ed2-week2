@@ -52,8 +52,8 @@ export default function page({}: Props) {
           </thead>
           <tbody>
             {cart.length > 0 ? (
-              cart.map((item) => (
-                <tr className="border-b border-border">
+              cart.map((item: any, index: number) => (
+                <tr className="border-b border-border" key={index}>
                   {" "}
                   <td className="p-2 py-4">
                     <div className="flex flex-row gap-x-2 items-center relative">

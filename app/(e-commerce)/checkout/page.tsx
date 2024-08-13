@@ -28,7 +28,7 @@ const Checkout = () => {
             .
           </p>
           <div className="py-4 space-y-1">
-            {cart.map((item) => (
+            {cart.map((item: any, index: number) => (
               <div
                 key={item.node.id}
                 className="flex items-center justify-between py-1 rounded-lg"
