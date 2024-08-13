@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navLinksLeft, navLinksRight, mobileNavLinks } from "@/constants";
+import { NAVLINKSLEFT, NAVLINKSRIGHT, MOBILENAVLINKS } from "@/constants";
 import { useCart } from "@/context/CartContext";
 
 type Props = {};
@@ -28,7 +28,7 @@ export default function Nav({}: Props) {
           />
         </div>
         <div className="hidden xl:flex space-x-[18px]">
-          {navLinksLeft.map(
+          {NAVLINKSLEFT.map(
             (link: { name: string; href: string }, index: number) => (
               <Link
                 key={index}
@@ -44,7 +44,7 @@ export default function Nav({}: Props) {
           <Link href="/">Ballamas</Link>
         </h1>
         <div className="hidden xl:flex items-center space-x-6">
-          {navLinksRight.map(
+          {NAVLINKSRIGHT.map(
             (link: { name: string; href: string }, index: number) => (
               <Link
                 key={index}
@@ -112,7 +112,7 @@ export default function Nav({}: Props) {
 
       {isOpen && (
         <div className="pb-[200px] xl:pb-0 flex flex-col items-center gap-y-[18px] py-8">
-          {[...navLinksLeft, ...navLinksRight].map(
+          {[...NAVLINKSLEFT, ...NAVLINKSRIGHT].map(
             (link: { name: string; href: string }, index: number) => (
               <Link
                 key={index}
@@ -136,7 +136,7 @@ export default function Nav({}: Props) {
             />
             <span>Account</span>
           </Link>
-          {mobileNavLinks.map(
+          {MOBILENAVLINKS.map(
             (link: { name: string; href: string }, index: number) => (
               <Link
                 key={index}

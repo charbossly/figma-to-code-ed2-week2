@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/layouts/Layout";
+import { FOOTERLINKS } from "@/constants";
 
 type Props = {};
 
@@ -36,69 +37,23 @@ export default function Footer({}: Props) {
             </div>
           </div>
           <div className="w-full md:w-auto grid  grid-cols-3 justify-between  gap-4 xl:w-[36%]">
-            <div>
-              <h2 className="font-medium text-t12 md:text-t16 font-Archivo mb-4 text-b-white">
-                Product
-              </h2>
-              <ul className="space-y-1">
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/product/jacket">Jacket</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/product/t-shirt">T-Shirt</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/product/jacket">Jacket</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/product/shoes">Shoes</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/product/sunglasses">Sunglasses</Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-medium text-t12 md:text-t16 font-Archivo mb-4 text-b-white">
-                Categories
-              </h2>
-              <ul className="space-y-1">
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/category/man">Man</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/category/woman">Woman</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/category/kids">Kids</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/category/gift">Gift</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/category/new-arrival">New arrival</Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-medium text-t12 md:text-t16 font-Archivo mb-4 text-b-white">
-                Our Social Media
-              </h2>
-              <ul className="space-y-1">
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/product/jacket">Instagram</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/product/t-shirt">Facebook</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/product/jacket">YouTube</Link>
-                </li>
-                <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
-                  <Link href="/product/shoes">X</Link>
-                </li>
-              </ul>
-            </div>
+            {FOOTERLINKS.map((item, index) => (
+              <div key={index}>
+                <h2 className="font-medium text-t12 md:text-t16 font-Archivo mb-4 text-b-white">
+                  {item.title}
+                </h2>
+                <ul className="space-y-1">
+                  {item.links.map((link, index) => (
+                    <li
+                      key={index}
+                      className="text-t10 md:text-t14 text-b-gray font-Archivo"
+                    >
+                      <Link href={link.href}>{link.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
         <div className="text-center text-b-dark-gray mt-6 text-t12 font-Archivo">
