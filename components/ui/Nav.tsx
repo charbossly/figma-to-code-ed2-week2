@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { navLinksLeft, navLinksRight, mobileNavLinks } from "@/constants";
+import { useCart } from "@/context/CartContext";
 
 type Props = {};
 
 export default function Nav({}: Props) {
   const [isOpen, setIsOpen] = useState(false);
+  const { cart } = useCart();
 
   return (
     <div className="xl:block">
@@ -69,7 +71,7 @@ export default function Nav({}: Props) {
             href="#"
             className="text-t16 font-Archivo font-normal text-blackUi"
           >
-            Cart(0)
+            Cart({cart.length})
           </Link>
           <Link
             href={"#"}
@@ -92,13 +94,20 @@ export default function Nav({}: Props) {
               height={20}
             />
           </button>
-          <button className="text-t16 font-Archivo font-normal text-blackUi">
-            <Image
-              src="/images/cart.png"
-              alt="cart-icon"
-              width={20}
-              height={20}
-            />
+          <button className="text-t16 font-Archivo font-normal text-blackUi relative">
+            <Link href={"/cart"}>
+              <Image
+                src="/images/cart.png"
+                alt="cart-icon"
+                width={20}
+                height={20}
+              />
+              {cart.length > 0 && (
+                <div className="absolute -top-1  right-0  text-center  text-blackUi text-sm">
+                  {cart.length}
+                </div>
+              )}
+            </Link>
           </button>
         </div>
       </nav>

@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 const Checkout = () => {
+  const { cart, total } = useCart();
   return (
     <div className="py-[50px]">
       <h1 className="text-3xl font-bold mb-8">Checkout</h1>
@@ -25,48 +28,36 @@ const Checkout = () => {
             .
           </p>
           <div className="py-4 space-y-1">
-            <div className="flex items-center justify-between py-1 rounded-lg">
-              <div className="flex items-center space-x-4">
-                <Image
-                  src={"/images/abrahamGeorge.png"}
-                  alt="T-Shirt"
-                  width={72}
-                  height={72}
-                  className="object-cover rounded"
-                />
-                <div>
-                  <h2 className="text-t14 font-Archivo font-semibold">
-                    T-Shirt
-                  </h2>
-                  <p className="text-darkGrayUi text-t12  font-medium font-Archivo">
-                    Color: Green - Size: Large
-                  </p>
+            {cart.map((item) => (
+              <div
+                key={item.node.id}
+                className="flex items-center justify-between py-1 rounded-lg"
+              >
+                <div className="flex items-center space-x-4">
+                  <Image
+                    src={item.node.featuredImage.url}
+                    alt="T-Shirt"
+                    width={72}
+                    height={72}
+                    className="object-cover rounded"
+                  />
+                  <div>
+                    <h2 className="text-t14 font-Archivo font-semibold">
+                      {item.node.title}
+                    </h2>
+                    <p className="text-darkGrayUi text-t12  font-medium font-Archivo">
+                      Color: {item.node.variants.edges[0].node.color} - Size:{" "}
+                      {item.node.variants.edges[0].node.size}
+                    </p>
+                  </div>
                 </div>
+                <span className="text-lg font-bold">
+                  $
+                  {item.node.variants.edges[0].node.price.amount *
+                    item.quantity}
+                </span>
               </div>
-              <span className="text-lg font-bold">$174.00</span>
-            </div>
-
-            <div className="flex items-center justify-between py-1 rounded-lg">
-              <div className="flex items-center space-x-4">
-                <Image
-                  src={"/images/abrahamGeorge.png"}
-                  alt="T-Shirt"
-                  width={72}
-                  height={72}
-                  className="object-cover rounded"
-                />
-                <div>
-                  <h2 className="text-t14 font-Archivo font-semibold">
-                    T-Shirt
-                  </h2>
-                  <p className="text-darkGrayUi text-t12  font-medium font-Archivo">
-                    Color: Green - Size: Large
-                  </p>
-                </div>
-              </div>
-              <span className="text-lg font-bold">$174.00</span>
-            </div>
-
+            ))}
             <div className="my-[24px]">
               <label
                 htmlFor="discount-code"
@@ -99,7 +90,7 @@ const Checkout = () => {
           <div className="mt-8 space-y-2 ">
             <div className="flex justify-between text-darkGrayUi">
               <p>Subtotal</p>
-              <p>$524.00</p>
+              <p>${total}</p>
             </div>
             <div className="flex justify-between text-darkGrayUi border-b-2 pb-2 ">
               <p>Discount</p>
@@ -107,7 +98,7 @@ const Checkout = () => {
             </div>
             <div className="flex justify-between font-bold">
               <p>Order total</p>
-              <p>$524.00</p>
+              <p>${total}</p>
             </div>
           </div>
 
@@ -164,7 +155,7 @@ const Checkout = () => {
           <h3 className="text-t14 font-semibold font-Archivo mb-2 font-blackUi">
             Shipping address
           </h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               {" "}
               <label
@@ -304,7 +295,7 @@ const Checkout = () => {
           <h3 className="text-lg font-medium mt-8 mb-2">
             Select payment method
           </h3>
-          <div className="space-y-2 flex space-x-2">
+          <div className="space-y-2 flex flex-col md:flew-row space-x-2">
             <label className="group group-hover:border-blackUi w-1/2 flex flex-col  gap-y-2 border border-gray-300 p-2 rounded-lg">
               <input
                 type="radio"
@@ -397,7 +388,7 @@ const Checkout = () => {
 
           {/* Pay Button */}
           <button className="mt-8 px-16 block  w-full md:w-auto mx-auto py-3 bg-black text-white rounded-full hover:bg-gray-800">
-            Pay $524.00
+            <Link href="/order-finished"> Pay {total}$</Link>
           </button>
         </div>
       </div>

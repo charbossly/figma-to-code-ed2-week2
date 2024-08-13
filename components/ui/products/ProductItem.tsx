@@ -1,12 +1,17 @@
+"use client";
+
 import Product from "@/types/product";
 import Image from "next/image";
 import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 type ProductItemProps = {
   product: Product;
 };
 
 const ProductItem = ({ product }: ProductItemProps) => {
+  const { addToCart } = useCart();
+
   return (
     <div key={product.node.id} className="group relative">
       <div className="rounded-3xl relative">
@@ -25,7 +30,10 @@ const ProductItem = ({ product }: ProductItemProps) => {
         )}
 
         <div className="hidden w-full  group-hover:flex justify-center absolute bottom-4 left-[50%] -translate-x-[50%]  px-4 gap-x-4">
-          <button className="flex-1 bg-white text-blackUi px-2 xl:px-4 py-2 rounded-full uppercase flex gap-x-1 items-center text-t14 font-Archivo font-bold">
+          <button
+            onClick={() => addToCart(product)}
+            className="flex-1 bg-white text-blackUi px-2 xl:px-4 py-2 rounded-full uppercase flex gap-x-1 items-center text-t14 font-Archivo font-bold"
+          >
             <Image
               src={"/images/cartAdd.png"}
               alt="cart"
@@ -35,7 +43,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
             Add to Cart
           </button>
           <button className="flex-1 border border-blackUi text-whiteUi  px-2 xl:px-4 py-2 rounded-full uppercase bg-transparent">
-            Buy
+            <Link href={`/checkout`}>Buy</Link>
           </button>
         </div>
       </div>

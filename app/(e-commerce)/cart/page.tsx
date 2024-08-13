@@ -1,17 +1,32 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { useCart } from "@/context/CartContext";
+import Link from "next/link";
 
 type Props = {};
 
 export default function page({}: Props) {
+  const {
+    cart,
+    removeFromCart,
+    incrementQuantity,
+    decrementQuantity,
+    clearCart,
+    total,
+  } = useCart();
+
   return (
     <div className=" flex flex-col items-center lg:flex-row  my-12 gap-[42px] lg:items-start">
       <div className="w-full lg:w-2/3">
         <div className="flex justify-between items-center my-5">
           <h2 className="text-t24 font-Chillax font-semibold text-blackUi">
-            Cart(3)
+            Cart({cart.length})
           </h2>
-          <button className="flex items-center justify-center text-t12 font-medium font-Archivo text-darkGrayUi bg-[#E5E5E5] p-2 rounded-full">
+          <button
+            onClick={clearCart}
+            className="flex items-center justify-center text-t12 font-medium font-Archivo text-darkGrayUi bg-[#E5E5E5] p-2 rounded-full"
+          >
             <Image
               src={"/images/trash.png"}
               alt="cart"
@@ -36,58 +51,78 @@ export default function page({}: Props) {
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-border">
-              <td className="p-2 py-4">
-                <div className="flex flex-row gap-x-2 items-center relative">
-                  <div className="w-full h-[72px] overflow-hidden relative">
-                    <Image
-                      src={"/images/imageThumb.png"}
-                      alt="image"
-                      //check if mobile or desktop
-                      //width={window.innerWidth > 768 ? 72 : 50}
-                      //height={window.innerWidth > 768 ? 72 : 50}
-                      sizes="100vw, 72px"
-                      fill
-                      className="rounded-lg object-cover object-center"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-bold font-Archivo text-t10 md:text-t14 text-blackUi">
-                      T-Shirt
-                    </span>
+            {cart.length > 0 ? (
+              cart.map((item) => (
+                <tr className="border-b border-border">
+                  {" "}
+                  <td className="p-2 py-4">
+                    <div className="flex flex-row gap-x-2 items-center relative">
+                      <div className="w-full h-[72px] overflow-hidden relative">
+                        <Image
+                          src={item.node.featuredImage.url}
+                          alt="image"
+                          //check if mobile or desktop
+                          //width={window.innerWidth > 768 ? 72 : 50}
+                          //height={window.innerWidth > 768 ? 72 : 50}
+                          sizes="100vw, 72px"
+                          fill
+                          className="rounded-lg object-cover object-center"
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-bold font-Archivo text-t10 md:text-t14 text-blackUi">
+                          {item.node.title}
+                        </span>
 
-                    <span className="font-medium font-Archivo text-t10 md:text-14 text-darkGrayUi">
-                      Green - Large
-                    </span>
-                    <span className="font-bold font-Archivo text-t10 md:text-t14 text-blackUi">
-                      $87
-                    </span>
-                  </div>
-                </div>
-              </td>
-              <td className="my-6 p-2 py-4 flex flex-row justify-center gap-x-1 items-center text-center ">
-                <div className="text-secondary-foreground p-[0.5rem] space-x-2 md:space-x-4 px-2  rounded-full bg-[#E5E5E5] bg-opacity-65">
-                  <button className="text-secondary-foreground p-2 py-0 rounded-full border border-blackUi">
-                    -
-                  </button>
-                  <span className="mx-1 md:mx-2">2</span>
-                  <button className="text-secondary-foreground p-2  py-0 rounded-full border border-blackUi">
-                    +
-                  </button>
-                </div>
-                <button className="md:p-2 rounded-full bg-[#E5E5E5] bg-opacity-65 flex items-center justify-center text-t12 font-medium font-Archivo text-darkGrayUi">
-                  <Image
-                    src={"/images/trash.png"}
-                    alt="cart"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              </td>
-              <td className="p-2 text-blackUi font-medium text-t12 font-Archivo text-center">
-                $174.00
-              </td>
-            </tr>
+                        <span className="font-medium font-Archivo text-t10 md:text-14 text-darkGrayUi">
+                          {item.node.variants.edges[0].node.title}
+                        </span>
+                        <span className="font-bold font-Archivo text-t10 md:text-t14 text-blackUi">
+                          ${item.node.variants.edges[0].node.price.amount}
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="my-6 p-2 py-4 flex flex-row justify-center gap-x-1 items-center text-center ">
+                    <div className="text-secondary-foreground p-[0.5rem] space-x-2 md:space-x-4 px-2  rounded-full bg-[#E5E5E5] bg-opacity-65">
+                      <button
+                        onClick={() => decrementQuantity(item.node.id)}
+                        className="text-secondary-foreground p-2 py-0 rounded-full border border-blackUi"
+                      >
+                        -
+                      </button>
+                      <span className="mx-1 md:mx-2">{item.quantity}</span>
+                      <button
+                        onClick={() => incrementQuantity(item.node.id)}
+                        className="text-secondary-foreground p-2  py-0 rounded-full border border-blackUi"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <button
+                      onClick={() => removeFromCart(item.node.id)}
+                      className="md:p-2 rounded-full bg-[#E5E5E5] bg-opacity-65 flex items-center justify-center text-t12 font-medium font-Archivo text-darkGrayUi"
+                    >
+                      <Image
+                        src={"/images/trash.png"}
+                        alt="cart"
+                        width={20}
+                        height={20}
+                      />
+                    </button>
+                  </td>
+                  <td className="p-2 text-blackUi font-medium text-t12 font-Archivo text-center">
+                    {item.node.variants.edges[0].node.price.amount *
+                      item.quantity}
+                    $
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr className="border-b border-border">
+                <td className="">Pas de produit dans votre panier</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -98,7 +133,7 @@ export default function page({}: Props) {
             Subtotal
           </span>
           <span className="text-t14 font-medium font-Archivo  text-darkGrayUi">
-            $524.00
+            {total}
           </span>
         </div>
         <div className="flex justify-between mt-2">
@@ -114,11 +149,11 @@ export default function page({}: Props) {
             Order total
           </span>
           <span className="text-t14 font-extrabold font-Archivo  text-blackUi">
-            $524.00
+            {total}
           </span>
         </div>
         <button className="mt-4 w-full bg-blackUi text-whiteUi  text-primary-foreground p-2 rounded-full">
-          Checkout now
+          <Link href={"/checkout"}>Checkout now</Link>
         </button>
       </div>
     </div>

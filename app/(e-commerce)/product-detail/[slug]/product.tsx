@@ -5,12 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { colorName } from "@/lib/products";
 import Recommandations from "@/components/ui/products/Recommandations";
+import { useCart } from "@/context/CartContext";
 
 type Props = {
   product: any;
 };
 
 export default function product({ product: product }: Props) {
+  const { addToCart } = useCart();
+
   const [productImage, setProductImage] = React.useState(
     product?.featuredImage?.url
   );
@@ -104,7 +107,10 @@ export default function product({ product: product }: Props) {
                   </Link> */}
                   <Link href={`/checkout`}>Buy</Link>
                 </button>
-                <button className="flex-1 px-4 py-[10px] md:py-[24px]  border border-gray-300 rounded-full hover:bg-gray-100">
+                <button
+                  onClick={() => addToCart(product)}
+                  className="flex-1 px-4 py-[10px] md:py-[24px]  border border-gray-300 rounded-full hover:bg-gray-100"
+                >
                   Add to Cart
                 </button>
               </div>
