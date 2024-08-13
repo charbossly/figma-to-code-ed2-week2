@@ -43,6 +43,9 @@ const config: Config = {
         t42: "42px",
         t48: "48px",
       },
+      borderRadius: {
+        52: "52px",
+      },
 
       backgroundImage: {
         herobg: "url('/images/herobg.png')",

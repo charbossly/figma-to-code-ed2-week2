@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["cdn.shopify.com"],
+    remotePatterns: ["cdn.shopify.com"],
   },
 };
 

@@ -6,8 +6,7 @@ type Props = {};
 
 export default function Hero({}: Props) {
   return (
-    <section className="w-full flex bg-herobg flex-col items-center justify-center h-[372px] md:h-[460px]  xl:h-[500px] rounded-[52px] bg-center bg-cover bg-no-repeat relative">
-      {/* <div className="absolute inset-0 bg-b-black opacity-15 rounded-[52px]" /> */}
+    <section className="w-full flex bg-herobg flex-col items-center justify-center h-[372px] md:h-[460px]  xl:h-[500px] rounded-52 bg-center bg-cover bg-no-repeat relative">
       <div className="flex flex-row gap-x-4 items-center gap-y-[18px]">
         <div className="h-[1px] w-[66px] bg-b-white"></div>
         <h2 className="text-t10 md:text-t14 font-Archivo text-b-white">
