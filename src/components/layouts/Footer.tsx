@@ -14,12 +14,11 @@ export default function Footer({}: Props) {
       <Layout>
         <div className="container mx-auto flex flex-col xl:flex-row gap-y-[20px] xl:gap-y-0 justify-between items-start">
           <div className="flex flex-col justify-center gap-y-[20px] xl:w-[36%]">
-            <Image
-              src="/images/logoFooter.png"
-              alt="logo"
-              width={158}
-              height={50}
-            />
+            <Link href="/">
+              <h1 className="uppercase text-[#4a4a4a00] text-t30 font-Chillax  cursor-pointer font-semibold text-customStroke">
+                Ballamas
+              </h1>
+            </Link>
 
             <p className="text-t12 md:text-t14 font-medium font-Archivo text-b-white">
               Subscribe to our newsletter for upcoming products and best
@@ -57,7 +56,18 @@ export default function Footer({}: Props) {
           </div>
         </div>
         <div className="text-center text-b-dark-gray mt-6 text-t12 font-Archivo">
-          © BALLAMAS 2023
+          © BALLAMAS 2023 design by{" "}
+          <Link href={"https://www.linkedin.com/in/waris-akinocho/"}>
+            {"waris"}
+          </Link>{" "}
+          - Made by{" "}
+          <Link
+            href={
+              "https://www.linkedin.com/in/mahoudjro-charbel-assogba-5734a6206/"
+            }
+          >
+            {"charbel"}
+          </Link>
         </div>
       </Layout>
     </footer>
