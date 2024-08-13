@@ -24,7 +24,7 @@ const CollectionSection = async () => {
           />
 
           <div className="absolute bottom-4 left-[50%] -translate-x-[50%]">
-            <button className="px-[20px] py-[12px] text-t14 font-Archivo bg-white text-blackUi rounded-full shadow-lg flex items-center justify-center font-semibold space-x-2 hover:bg-gray-100 ">
+            <button className="px-[20px] py-[12px] text-t14 font-Archivo bg-white text-b-black rounded-full shadow-lg flex items-center justify-center font-semibold space-x-2 hover:bg-gray-100 ">
               <span className="text-t14">LEARN MORE</span>
               <Image
                 src={"/images/arrow.png"}

@@ -20,12 +20,12 @@ export default function Page({}: Props) {
     <div className=" flex flex-col items-center lg:flex-row  my-12 gap-[42px] lg:items-start">
       <div className="w-full lg:w-2/3">
         <div className="flex justify-between items-center my-5">
-          <h2 className="text-t24 font-Chillax font-semibold text-blackUi">
+          <h2 className="text-t24 font-Chillax font-semibold text-b-black">
             Cart({cart.length})
           </h2>
           <button
             onClick={clearCart}
-            className="flex items-center justify-center text-t12 font-medium font-Archivo text-darkGrayUi bg-[#E5E5E5] p-2 rounded-full"
+            className="flex items-center justify-center text-t12 font-medium font-Archivo text-b-dark-gray bg-[#E5E5E5] p-2 rounded-full"
           >
             <Image
               src={"/images/trash.png"}
@@ -39,13 +39,13 @@ export default function Page({}: Props) {
         <table className="min-w-full mt-4">
           <thead>
             <tr className="bg-muted border-b border-border">
-              <th className="p-2 text-left text-darkGrayUi text-t12 font-weight">
+              <th className="p-2 text-left text-b-dark-gray text-t12 font-weight">
                 Product
               </th>
-              <th className="p-2 text-center text-darkGrayUi text-t12 font-weight">
+              <th className="p-2 text-center text-b-dark-gray text-t12 font-weight">
                 Quantity
               </th>
-              <th className="p-2 text-center text-darkGrayUi text-t12 font-weight">
+              <th className="p-2 text-center text-b-dark-gray text-t12 font-weight">
                 Price
               </th>
             </tr>
@@ -70,14 +70,14 @@ export default function Page({}: Props) {
                         />
                       </div>
                       <div className="flex flex-col">
-                        <span className="font-bold font-Archivo text-t10 md:text-t14 text-blackUi">
+                        <span className="font-bold font-Archivo text-t10 md:text-t14 text-b-black">
                           {item.node.title}
                         </span>
 
-                        <span className="font-medium font-Archivo text-t10 md:text-14 text-darkGrayUi">
+                        <span className="font-medium font-Archivo text-t10 md:text-14 text-b-dark-gray">
                           {item.node.variants.edges[0].node.title}
                         </span>
-                        <span className="font-bold font-Archivo text-t10 md:text-t14 text-blackUi">
+                        <span className="font-bold font-Archivo text-t10 md:text-t14 text-b-black">
                           ${item.node.variants.edges[0].node.price.amount}
                         </span>
                       </div>
@@ -87,21 +87,21 @@ export default function Page({}: Props) {
                     <div className="text-secondary-foreground p-[0.5rem] space-x-2 md:space-x-4 px-2  rounded-full bg-[#E5E5E5] bg-opacity-65">
                       <button
                         onClick={() => decrementQuantity(item.node.id)}
-                        className="text-secondary-foreground p-2 py-0 rounded-full border border-blackUi"
+                        className="text-secondary-foreground p-2 py-0 rounded-full border border-b-black"
                       >
                         -
                       </button>
                       <span className="mx-1 md:mx-2">{item.quantity}</span>
                       <button
                         onClick={() => incrementQuantity(item.node.id)}
-                        className="text-secondary-foreground p-2  py-0 rounded-full border border-blackUi"
+                        className="text-secondary-foreground p-2  py-0 rounded-full border border-b-black"
                       >
                         +
                       </button>
                     </div>
                     <button
                       onClick={() => removeFromCart(item.node.id)}
-                      className="md:p-2 rounded-full bg-[#E5E5E5] bg-opacity-65 flex items-center justify-center text-t12 font-medium font-Archivo text-darkGrayUi"
+                      className="md:p-2 rounded-full bg-[#E5E5E5] bg-opacity-65 flex items-center justify-center text-t12 font-medium font-Archivo text-b-dark-gray"
                     >
                       <Image
                         src={"/images/trash.png"}
@@ -111,7 +111,7 @@ export default function Page({}: Props) {
                       />
                     </button>
                   </td>
-                  <td className="p-2 text-blackUi font-medium text-t12 font-Archivo text-center">
+                  <td className="p-2 text-b-black font-medium text-t12 font-Archivo text-center">
                     {item.node.variants.edges[0].node.price.amount *
                       item.quantity}
                     $
@@ -126,33 +126,33 @@ export default function Page({}: Props) {
           </tbody>
         </table>
       </div>
-      <div className="w-full md:w-1/2 lg:w-1/3 mt-4 md:mt-0 md:ml-4 bg-card p-4 border border-lightGrayUi rounded-xl">
+      <div className="w-full md:w-1/2 lg:w-1/3 mt-4 md:mt-0 md:ml-4 bg-card p-4 border border-b-light-gray rounded-xl">
         <h3 className="text-lg font-semibold">Order summary</h3>
         <div className="flex justify-between mt-2">
-          <span className="text-t14 font-medium font-Archivo text-darkGrayUi">
+          <span className="text-t14 font-medium font-Archivo text-b-dark-gray">
             Subtotal
           </span>
-          <span className="text-t14 font-medium font-Archivo  text-darkGrayUi">
+          <span className="text-t14 font-medium font-Archivo  text-b-dark-gray">
             {total}
           </span>
         </div>
         <div className="flex justify-between mt-2">
-          <span className="text-t14 font-medium font-Archivo  text-darkGrayUi">
+          <span className="text-t14 font-medium font-Archivo  text-b-dark-gray">
             Discount
           </span>
-          <span className="text-t14 font-medium font-Archivo  text-darkGrayUi">
+          <span className="text-t14 font-medium font-Archivo  text-b-dark-gray">
             $0
           </span>
         </div>
-        <div className="flex justify-between mt-4 font-semibold border-t border-lightGrayUi pt-3">
-          <span className="text-t14 font-extrabold font-Archivo  text-blackUi">
+        <div className="flex justify-between mt-4 font-semibold border-t border-b-light-gray pt-3">
+          <span className="text-t14 font-extrabold font-Archivo  text-b-black">
             Order total
           </span>
-          <span className="text-t14 font-extrabold font-Archivo  text-blackUi">
+          <span className="text-t14 font-extrabold font-Archivo  text-b-black">
             {total}
           </span>
         </div>
-        <button className="mt-4 w-full bg-blackUi text-whiteUi  text-primary-foreground p-2 rounded-full">
+        <button className="mt-4 w-full bg-b-black text-b-white  text-primary-foreground p-2 rounded-full">
           <Link href={"/checkout"}>Checkout now</Link>
         </button>
       </div>

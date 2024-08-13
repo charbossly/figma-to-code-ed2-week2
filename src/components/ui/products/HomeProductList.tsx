@@ -36,8 +36,8 @@ function HomeProductList({ categories, products, categoriesCount }: Props) {
           onClick={() => handleFilterChange({ node: "All" })}
           className={`px-4 py-2 font-medium rounded-full capitalize ${
             selectedCategory === "All"
-              ? "bg-blackUi text-white"
-              : "text-blackUi hover:bg-gray-300 border border-blackUi"
+              ? "bg-b-black text-white"
+              : "text-b-black hover:bg-gray-300 border border-b-black"
           }`}
         >
           All
@@ -48,8 +48,8 @@ function HomeProductList({ categories, products, categoriesCount }: Props) {
             onClick={() => handleFilterChange(category)}
             className={`px-4 py-2 font-medium rounded-full capitalize ${
               selectedCategory === category.node
-                ? "bg-blackUi text-white"
-                : " text-blackUi hover:bg-gray-300 border border-blackUi"
+                ? "bg-b-black text-white"
+                : " text-b-black hover:bg-gray-300 border border-b-black"
             }`}
           >
             {category.node} {categoriesCount[index]}
@@ -60,7 +60,7 @@ function HomeProductList({ categories, products, categoriesCount }: Props) {
       <VerticalProductList products={filteredProducts} />
       <div className="flex justify-center my-4">
         <Link
-          className="align-middle text-t14 font-Archivo font-semibold border border-blackUi p-[12px] rounded-full text-blackUi hover:bg-grayUi transition"
+          className="align-middle text-t14 font-Archivo font-semibold border border-b-black p-[12px] rounded-full text-b-black hover:bg-b-gray transition"
           href="#"
         >
           {" "}

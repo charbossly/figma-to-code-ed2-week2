@@ -15,7 +15,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <div key={product.node.id} className="group relative">
       <div className="rounded-3xl relative">
-        <div className="hidden group-hover:block rounded-3xl absolute inset-0 bg-darkGrayUi bg-opacity-20" />
+        <div className="hidden group-hover:block rounded-3xl absolute inset-0 bg-b-dark-gray bg-opacity-20" />
         <Image
           src={product.node.featuredImage.url}
           alt={product.node.title}
@@ -24,7 +24,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           className="rounded-3xl"
         />
         {product.node.availableForSale && (
-          <div className="absolute left-5 top-4 text-t12 font-Archivo rounded-full bg-whiteUi text-blackUi px-4 py-2">
+          <div className="absolute left-5 top-4 text-t12 font-Archivo rounded-full bg-b-white text-b-black px-4 py-2">
             GET OFF 20%
           </div>
         )}
@@ -32,7 +32,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
         <div className="hidden w-full  group-hover:flex justify-center absolute bottom-4 left-[50%] -translate-x-[50%]  px-4 gap-x-4">
           <button
             onClick={() => addToCart(product)}
-            className="flex-1 bg-white text-blackUi px-2 xl:px-4 py-2 rounded-full uppercase flex gap-x-1 items-center text-t14 font-Archivo font-bold"
+            className="flex-1 bg-white text-b-black px-2 xl:px-4 py-2 rounded-full uppercase flex gap-x-1 items-center text-t14 font-Archivo font-bold"
           >
             <Image
               src={"/images/cartAdd.png"}
@@ -42,7 +42,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
             />
             Add to Cart
           </button>
-          <button className="flex-1 border border-blackUi text-whiteUi  px-2 xl:px-4 py-2 rounded-full uppercase bg-transparent">
+          <button className="flex-1 border border-b-black text-b-white  px-2 xl:px-4 py-2 rounded-full uppercase bg-transparent">
             <Link href={`/checkout`}>Buy</Link>
           </button>
         </div>
@@ -55,7 +55,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           {product.node.title}
         </Link>
       </h3>
-      <p className="text-darkGrayUi font-Archivo  font-semibold text-t28 my-[2px]">
+      <p className="text-b-dark-gray font-Archivo  font-semibold text-t28 my-[2px]">
         $ {product.node.variants.edges[0].node.price.amount}
       </p>
     </div>

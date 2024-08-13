@@ -14,7 +14,7 @@ export default function Nav({}: Props) {
 
   return (
     <div className="xl:block">
-      <nav className="flex border-b border-b-lightGrayUi xl:border-none justify-between items-center py-[26px] mx-auto xl:gap-x-24">
+      <nav className="flex border-b border-b-b-light-gray xl:border-none justify-between items-center py-[26px] mx-auto xl:gap-x-24">
         <div className="flex xl:hidden items-center">
           <Image
             className="cursor-pointer"
@@ -33,7 +33,7 @@ export default function Nav({}: Props) {
               <Link
                 key={index}
                 href={link.href}
-                className="text-t16 font-Archivo  font-normal text-blackUi"
+                className="text-t16 font-Archivo  font-normal text-b-black"
               >
                 {link.name}
               </Link>
@@ -49,7 +49,7 @@ export default function Nav({}: Props) {
               <Link
                 key={index}
                 href={link.href}
-                className="text-t16 font-Archivo font-normal text-blackUi"
+                className="text-t16 font-Archivo font-normal text-b-black"
               >
                 {link.name}
               </Link>
@@ -57,7 +57,7 @@ export default function Nav({}: Props) {
           )}
           <Link
             href="#"
-            className="text-t16 font-Archivo font-normal text-blackUi flex  items-center justify-center space-x-1"
+            className="text-t16 font-Archivo font-normal text-b-black flex  items-center justify-center space-x-1"
           >
             <Image
               src="/images/profil.png"
@@ -69,13 +69,13 @@ export default function Nav({}: Props) {
           </Link>
           <Link
             href="#"
-            className="text-t16 font-Archivo font-normal text-blackUi"
+            className="text-t16 font-Archivo font-normal text-b-black"
           >
             Cart({cart.length})
           </Link>
           <Link
             href={"#"}
-            className="text-t16 font-Archivo font-normal text-blackUi"
+            className="text-t16 font-Archivo font-normal text-b-black"
           >
             <Image
               src="/images/search.png"
@@ -86,7 +86,7 @@ export default function Nav({}: Props) {
           </Link>
         </div>
         <div className="flex xl:hidden items-center gap-x-3">
-          <button className="text-t16 font-Archivo font-normal text-blackUi">
+          <button className="text-t16 font-Archivo font-normal text-b-black">
             <Image
               src="/images/search.png"
               alt="search-icon"
@@ -94,8 +94,8 @@ export default function Nav({}: Props) {
               height={20}
             />
           </button>
-          <button className="text-t16 font-Archivo font-normal text-blackUi relative">
-            <Link href={"/cart"}>
+          <button className="text-t16 font-Archivo font-normal text-b-black relative ">
+            <Link href={"/cart"} className="flex flex-row">
               <Image
                 src="/images/cart.png"
                 alt="cart-icon"
@@ -103,9 +103,7 @@ export default function Nav({}: Props) {
                 height={20}
               />
               {cart.length > 0 && (
-                <div className="absolute -top-1  right-0  text-center  text-blackUi text-sm">
-                  {cart.length}
-                </div>
+                <span className="text-b-black text-sm">({cart.length})</span>
               )}
             </Link>
           </button>
@@ -119,7 +117,7 @@ export default function Nav({}: Props) {
               <Link
                 key={index}
                 href={link.href}
-                className="text-t18 font-Archivo  font-normal text-blackUi"
+                className="text-t18 font-Archivo  font-normal text-b-black"
               >
                 {link.name}
               </Link>
@@ -128,7 +126,7 @@ export default function Nav({}: Props) {
 
           <Link
             href="#"
-            className="text-t18 font-Archivo font-normal text-blackUi flex  items-center justify-center space-x-1"
+            className="text-t18 font-Archivo font-normal text-b-black flex  items-center justify-center space-x-1"
           >
             <Image
               src="/images/profil.png"
@@ -143,7 +141,7 @@ export default function Nav({}: Props) {
               <Link
                 key={index}
                 href={link.href}
-                className={`text-t18 font-Archivo font-normal text-blackUi flex  items-center justify-center space-x-1 ${
+                className={`text-t18 font-Archivo font-normal text-b-black flex  items-center justify-center space-x-1 ${
                   index == 0 ? "mt-4" : "mt-0"
                 }`}
               >

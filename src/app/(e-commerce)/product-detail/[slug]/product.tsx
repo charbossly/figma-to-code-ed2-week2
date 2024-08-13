@@ -49,7 +49,7 @@ export default function Product({ product: product }: Props) {
 
             {/* Product Details */}
             <div className="w-full xl:w-1/2 pl-8 space-y-[18px]">
-              <h1 className="text-t30 md:text-t42 font-Chillax font-semibold text-blackUi">
+              <h1 className="text-t30 md:text-t42 font-Chillax font-semibold text-b-black">
                 {product?.title ?? "Product"}
               </h1>
               <p className="text-t24 md:text-t36 mt-2 font-Archivo font-semibold">
@@ -120,7 +120,7 @@ export default function Product({ product: product }: Props) {
                 Description
               </p>
 
-              <p className="mt-8 text-darkGrayUi text-t14 md:text-t18  font-Archivo">
+              <p className="mt-8 text-b-dark-gray text-t14 md:text-t18  font-Archivo">
                 {product?.description ??
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nisi vitae elit tristique pellentesque. Maecenas lobortis aliquam magna. Curabitur tempus mauris at magna feugiat, et dapibus libero tincidunt."}
               </p>

@@ -12,16 +12,16 @@ const Checkout = () => {
       <div className="flex flex-col xl:flex-row space-y-8 md:space-y-0 md:space-x-8 gap-x-[112px]">
         {/* Left Column: Order Summary */}
         <div className="w-full xl:w-2/3">
-          <h2 className="font-Archivo font-semibold font-t14 text-blackUi my-4">
+          <h2 className="font-Archivo font-semibold font-t14 text-b-black my-4">
             Your Order
           </h2>
-          <p className="font-Archivo font-semibold font-t14 text-blackUi my-4">
+          <p className="font-Archivo font-semibold font-t14 text-b-black my-4">
             By placing your order, you agree to Ballamas{" "}
-            <Link href={"#"} className={"underline text-blackUi"}>
+            <Link href={"#"} className={"underline text-b-black"}>
               Privacy
             </Link>{" "}
             and
-            <Link href={"#"} className={"underline text-blackUi"}>
+            <Link href={"#"} className={"underline text-b-black"}>
               {" "}
               Policy
             </Link>
@@ -45,7 +45,7 @@ const Checkout = () => {
                     <h2 className="text-t14 font-Archivo font-semibold">
                       {item.node.title}
                     </h2>
-                    <p className="text-darkGrayUi text-t12  font-medium font-Archivo">
+                    <p className="text-b-dark-gray text-t12  font-medium font-Archivo">
                       Color: {item.node.variants.edges[0].node.color} - Size:{" "}
                       {item.node.variants.edges[0].node.size}
                     </p>
@@ -70,9 +70,9 @@ const Checkout = () => {
                   type="text"
                   id="discount-code"
                   placeholder="Add discount code"
-                  className="w-1/2 p-2 border border-border border-darkGrayUi rounded-full"
+                  className="w-1/2 p-2 border border-border border-b-dark-gray rounded-full"
                 />
-                <button className="bg-blackUi  text-white py-2 px-[28px] rounded-full">
+                <button className="bg-b-black  text-white py-2 px-[28px] rounded-full">
                   Apply
                 </button>
               </div>
@@ -88,11 +88,11 @@ const Checkout = () => {
 
           {/* Order Total */}
           <div className="mt-8 space-y-2 ">
-            <div className="flex justify-between text-darkGrayUi">
+            <div className="flex justify-between text-b-dark-gray">
               <p>Subtotal</p>
               <p>${total}</p>
             </div>
-            <div className="flex justify-between text-darkGrayUi border-b-2 pb-2 ">
+            <div className="flex justify-between text-b-dark-gray border-b-2 pb-2 ">
               <p>Discount</p>
               <p>$0</p>
             </div>
@@ -108,31 +108,31 @@ const Checkout = () => {
               Shipping method
             </h2>
             <div className="space-y-2">
-              <label className="group flex items-center border-2 border-lightGrayUi rounded-full p-[12px]">
+              <label className="group flex items-center border-2 border-b-light-gray rounded-full p-[12px]">
                 <input
                   type="radio"
                   name="shipping"
-                  className="form-radio text-blackUi h-6 w-6"
+                  className="form-radio text-b-black h-6 w-6"
                 />
                 <span className="ml-3 flex flex-col">
                   Free shipping <br /> (7-10 business days) - $0
                 </span>
               </label>
-              <label className="group flex items-center border-2 border-lightGrayUi rounded-full p-[12px]">
+              <label className="group flex items-center border-2 border-b-light-gray rounded-full p-[12px]">
                 <input
                   type="radio"
                   name="shipping"
-                  className="form-radio text-blackUi h-6 w-6"
+                  className="form-radio text-b-black h-6 w-6"
                 />
                 <span className="ml-3 flex flex-col">
                   Free shipping <br /> (7-10 business days) - $0
                 </span>
               </label>
-              <label className="group flex items-center border-2 border-lightGrayUi rounded-full p-[12px]">
+              <label className="group flex items-center border-2 border-b-light-gray rounded-full p-[12px]">
                 <input
                   type="radio"
                   name="shipping"
-                  className="form-radio text-blackUi h-6 w-6"
+                  className="form-radio text-b-black h-6 w-6"
                 />
                 <span className="ml-3 flex flex-col">
                   Free shipping <br /> (7-10 business days) - $0
@@ -144,15 +144,15 @@ const Checkout = () => {
 
         {/* Right Column: Payment Details */}
         <div className="w-full xl:w-1/3">
-          <h2 className="text-t14 font-semibold font-Archivo mb-4 font-blackUi">
+          <h2 className="text-t14 font-semibold font-Archivo mb-4 font-b-black">
             Payment details
           </h2>
-          <p className="text-t12 font-Archivo font-semibold text-darkGrayUi my-4">
+          <p className="text-t12 font-Archivo font-semibold text-b-dark-gray my-4">
             Complete your purchase by providing your payment details.
           </p>
 
           {/* Shipping Address */}
-          <h3 className="text-t14 font-semibold font-Archivo mb-2 font-blackUi">
+          <h3 className="text-t14 font-semibold font-Archivo mb-2 font-b-black">
             Shipping address
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -169,7 +169,7 @@ const Checkout = () => {
                   type="text"
                   id="discount-code"
                   placeholder="Enter your first name"
-                  className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                  className="w-full p-2 border border-border border-b-dark-gray rounded-full"
                 />
               </div>
             </div>
@@ -186,7 +186,7 @@ const Checkout = () => {
                   type="text"
                   id="discount-code"
                   placeholder="Enter your last name"
-                  className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                  className="w-full p-2 border border-border border-b-dark-gray rounded-full"
                 />
               </div>
             </div>
@@ -203,7 +203,7 @@ const Checkout = () => {
                   type="text"
                   id="discount-code"
                   placeholder="Enter your email address"
-                  className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                  className="w-full p-2 border border-border border-b-dark-gray rounded-full"
                 />
               </div>
             </div>
@@ -220,7 +220,7 @@ const Checkout = () => {
                   type="text"
                   id="discount-code"
                   placeholder="Enter your phone number"
-                  className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                  className="w-full p-2 border border-border border-b-dark-gray rounded-full"
                 />
               </div>
             </div>
@@ -237,7 +237,7 @@ const Checkout = () => {
                   type="text"
                   id="discount-code"
                   placeholder="Enter your address"
-                  className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                  className="w-full p-2 border border-border border-b-dark-gray rounded-full"
                 />
               </div>
             </div>
@@ -254,7 +254,7 @@ const Checkout = () => {
                   type="text"
                   id="discount-code"
                   placeholder="Enter your city"
-                  className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                  className="w-full p-2 border border-border border-b-dark-gray rounded-full"
                 />
               </div>
             </div>
@@ -267,7 +267,7 @@ const Checkout = () => {
                 Select region
               </label>
               <div className="flex items-center space-x-2 my-2">
-                <select className="w-full p-2 border border-border border-darkGrayUi rounded-full">
+                <select className="w-full p-2 border border-border border-b-dark-gray rounded-full">
                   <option>Select region</option>
                   {/* Add options here */}
                 </select>
@@ -286,7 +286,7 @@ const Checkout = () => {
                   type="text"
                   id="discount-code"
                   placeholder="Enter your postal code"
-                  className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                  className="w-full p-2 border border-border border-b-dark-gray rounded-full"
                 />
               </div>
             </div>
@@ -296,7 +296,7 @@ const Checkout = () => {
             Select payment method
           </h3>
           <div className="space-y-2 flex flex-col md:flew-row space-x-2">
-            <label className="group group-hover:border-blackUi w-1/2 flex flex-col  gap-y-2 border border-gray-300 p-2 rounded-lg">
+            <label className="group group-hover:border-b-black w-1/2 flex flex-col  gap-y-2 border border-gray-300 p-2 rounded-lg">
               <input
                 type="radio"
                 name="payment"
@@ -320,7 +320,7 @@ const Checkout = () => {
                 Debit/Credit Card
               </span>
             </label>
-            <label className="group group-hover:border-blackUi w-1/2 flex flex-col  gap-y-2 border border-gray-300 p-2 rounded-lg">
+            <label className="group group-hover:border-b-black w-1/2 flex flex-col  gap-y-2 border border-gray-300 p-2 rounded-lg">
               <input
                 type="radio"
                 name="payment"
@@ -352,7 +352,7 @@ const Checkout = () => {
                 type="text"
                 id="discount-code"
                 placeholder="Card number"
-                className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                className="w-full p-2 border border-border border-b-dark-gray rounded-full"
               />
             </div>
           </div>
@@ -363,7 +363,7 @@ const Checkout = () => {
                 type="text"
                 id="discount-code"
                 placeholder="Card number"
-                className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                className="w-full p-2 border border-border border-b-dark-gray rounded-full"
               />
             </div>
             <div className="flex items-center space-x-2 my-2 ">
@@ -371,7 +371,7 @@ const Checkout = () => {
                 type="text"
                 id="discount-code"
                 placeholder="Card number"
-                className="w-full p-2 border border-border border-darkGrayUi rounded-full"
+                className="w-full p-2 border border-border border-b-dark-gray rounded-full"
               />
             </div>
           </div>

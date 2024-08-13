@@ -2,9 +2,9 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     screens: {
@@ -15,15 +15,15 @@ const config: Config = {
     },
     extend: {
       colors: {
-        whiteUi: "#FFFFFF",
-        lightGrayUi: "#E5E5E5",
-        grayUi: "#C3C3C3",
-        darkGrayUi: "#7E7E7E",
-        blackUi: "#1D1D1D",
-        greenUi: "#2D5C43",
-        purpleUi: "#393158",
-        oceanUi: "#2A5259",
-        oliveUi: "#706947",
+        "b-white": "#FFFFFF",
+        "b-light-gray": "#E5E5E5",
+        "b-gray": "#C3C3C3",
+        "b-dark-gray": "#7E7E7E",
+        "b-black": "#1D1D1D",
+        "b-green": "#2D5C43",
+        "b-purple": "#393158",
+        "b-ocean": "#2A5259",
+        "b-olive": "#706947",
       },
       fontFamily: {
         Archivo: ["Archivo", "sans-serif"],
