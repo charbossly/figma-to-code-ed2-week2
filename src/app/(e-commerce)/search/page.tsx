@@ -1,7 +1,7 @@
 import React from "react";
 import { fetchProducts, fetchProductsByCategories } from "@/lib/api";
 import VerticalProductList from "@/components/ui/products/VerticalProductList";
-
+import { Suspense } from "react";
 type Props = {
   searchParams?: { [key: string]: string | string[] | undefined };
 };
@@ -14,7 +14,9 @@ export default async function SearchPage({ searchParams }: Props) {
 
   return (
     <div className="flex justify-start xl:justify-center  flex-wrap space-x-4 mb-8 gap-y-2">
-      <VerticalProductList products={products} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <VerticalProductList products={products} />
+      </Suspense>
     </div>
   );
 }
