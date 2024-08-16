@@ -6,7 +6,7 @@ type Props = {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="w-full max-w-[335px] md:max-w-[676px] xl:max-w-[1200px] mx-auto relative overflow-hidden">
+    <div className="w-full max-w-screen-b-sm md:max-w-screen-b-md xl:max-w-screen-b-xl mx-auto relative overflow-hidden">
       {children}
     </div>
   );

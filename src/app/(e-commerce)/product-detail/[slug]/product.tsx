@@ -31,12 +31,11 @@ export default function Product({ product: product }: Props) {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      {/*verifier si object a des valeurs ou pas*/}
       {product !== null ? (
         <>
           <div className="flex flex-col items-center justify-center gap-y-6 xl:gap-y-0 xl:flex-row">
             {/* Product Image */}
-            <div className="w-full xl:w-1/2  h-[600px] relative">
+            <div className="w-full xl:w-1/2  h-150 relative">
               <Image
                 fill
                 src={productImage}
@@ -48,7 +47,7 @@ export default function Product({ product: product }: Props) {
             </div>
 
             {/* Product Details */}
-            <div className="w-full xl:w-1/2 pl-8 space-y-[18px]">
+            <div className="w-full xl:w-1/2 pl-8 space-y-4.5">
               <h1 className="text-t30 md:text-t42 font-Chillax font-semibold text-b-black">
                 {product?.title ?? "Product"}
               </h1>
@@ -89,7 +88,7 @@ export default function Product({ product: product }: Props) {
                   return variant.node.size ? (
                     <button
                       key={variant.node.title}
-                      className={`text-t20 md:text-t24 font-medium font-Archivo px-[15px] py-[7px] md:px-[30px] md:py-[10px] border border-gray-300 rounded-full hover:bg-gray-100`}
+                      className={`text-t20 md:text-t24 font-medium font-Archivo px-4 py-2 md:px-7 md:py-2.5 border border-gray-300 rounded-full hover:bg-gray-100`}
                     >
                       {variant.node.size}
                     </button>
@@ -101,7 +100,7 @@ export default function Product({ product: product }: Props) {
 
               {/* Action Buttons */}
               <div className="flex mt-6 space-x-4 my-2 ">
-                <button className="flex-1 px-4 py-[10px] md:py-[24px] bg-black text-white rounded-full hover:bg-gray-800">
+                <button className="flex-1 px-4 py-2.5 md:py-6 bg-black text-white rounded-full hover:bg-gray-800">
                   {/* <Link href={`/product-detail/${encodeURIComponent(product.id)}`}>
                     In Stock
                   </Link> */}
@@ -109,7 +108,7 @@ export default function Product({ product: product }: Props) {
                 </button>
                 <button
                   onClick={() => addToCart(product)}
-                  className="flex-1 px-4 py-[10px] md:py-[24px]  border border-gray-300 rounded-full hover:bg-gray-100"
+                  className="flex-1 px-4 py-2.5 md:py-6  border border-gray-300 rounded-full hover:bg-gray-100"
                 >
                   Add to Cart
                 </button>

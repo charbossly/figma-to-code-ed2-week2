@@ -7,9 +7,9 @@ import { useCart } from "@/context/CartContext";
 const Checkout = () => {
   const { cart, total } = useCart();
   return (
-    <div className="py-[50px]">
+    <div className="py-12">
       <h1 className="text-3xl font-bold mb-8">Checkout</h1>
-      <div className="flex flex-col xl:flex-row space-y-8 md:space-y-0 md:space-x-8 gap-x-[112px]">
+      <div className="flex flex-col xl:flex-row space-y-8 md:space-y-0 md:space-x-8 gap-x-28">
         {/* Left Column: Order Summary */}
         <div className="w-full xl:w-2/3">
           <h2 className="font-Archivo font-semibold font-t14 text-b-black my-4">
@@ -58,7 +58,7 @@ const Checkout = () => {
                 </span>
               </div>
             ))}
-            <div className="my-[24px]">
+            <div className="my-6">
               <label
                 htmlFor="discount-code"
                 className="block font-medium text-t12 font-Archivo"
@@ -72,7 +72,7 @@ const Checkout = () => {
                   placeholder="Add discount code"
                   className="w-1/2 p-2 border border-border border-b-dark-gray rounded-full"
                 />
-                <button className="bg-b-black  text-white py-2 px-[28px] rounded-full">
+                <button className="bg-b-black  text-white py-2 px-7 rounded-full">
                   Apply
                 </button>
               </div>
@@ -108,7 +108,7 @@ const Checkout = () => {
               Shipping method
             </h2>
             <div className="space-y-2">
-              <label className="group flex items-center border-2 border-b-light-gray rounded-full p-[12px]">
+              <label className="group flex items-center border-2 border-b-light-gray rounded-full p-3">
                 <input
                   type="radio"
                   name="shipping"
@@ -118,7 +118,7 @@ const Checkout = () => {
                   Free shipping <br /> (7-10 business days) - $0
                 </span>
               </label>
-              <label className="group flex items-center border-2 border-b-light-gray rounded-full p-[12px]">
+              <label className="group flex items-center border-2 border-b-light-gray rounded-full p-3">
                 <input
                   type="radio"
                   name="shipping"
@@ -128,7 +128,7 @@ const Checkout = () => {
                   Free shipping <br /> (7-10 business days) - $0
                 </span>
               </label>
-              <label className="group flex items-center border-2 border-b-light-gray rounded-full p-[12px]">
+              <label className="group flex items-center border-2 border-b-light-gray rounded-full p-3">
                 <input
                   type="radio"
                   name="shipping"

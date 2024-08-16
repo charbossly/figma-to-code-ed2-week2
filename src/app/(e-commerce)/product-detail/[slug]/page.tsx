@@ -1,8 +1,5 @@
 import React, { Suspense } from "react";
-import Button from "./button";
-import Image from "next/image";
 import { fetchProductById } from "@/lib/api";
-import Link from "next/link";
 import { getColorsAndSizes } from "@/lib/products";
 import ProductCard from "./product";
 type Props = {

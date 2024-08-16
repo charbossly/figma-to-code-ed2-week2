@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/layouts/Layout";
 import { FOOTERLINKS } from "@/constants";
@@ -10,12 +7,12 @@ type Props = {};
 
 export default function Footer({}: Props) {
   return (
-    <footer className="bg-b-black text-foreground py-[52px] px-[20px] md:px-[46px] xl:px-[120px]">
+    <footer className="bg-b-black py-12 px-5 md:px-11 xl:px-30">
       <Layout>
-        <div className="container mx-auto flex flex-col xl:flex-row gap-y-[20px] xl:gap-y-0 justify-between items-start">
-          <div className="flex flex-col justify-center gap-y-[20px] xl:w-[36%]">
+        <div className="container mx-auto flex flex-col xl:flex-row gap-y-5 xl:gap-y-0 justify-between items-start">
+          <div className="flex flex-col justify-center gap-y-5 xl:w-1/3">
             <Link href="/">
-              <h1 className="uppercase text-[#4a4a4a00] text-t30 font-Chillax  cursor-pointer font-semibold text-customStroke">
+              <h1 className="uppercase text-b-stroke text-t30 font-Chillax  cursor-pointer font-semibold text-customStroke">
                 Ballamas
               </h1>
             </Link>
@@ -35,7 +32,7 @@ export default function Footer({}: Props) {
               </button>
             </div>
           </div>
-          <div className="w-full md:w-auto grid  grid-cols-3 justify-between  gap-4 xl:w-[36%]">
+          <div className="w-full md:w-auto grid  grid-cols-3 justify-between  gap-4 xl:w-1/3">
             {FOOTERLINKS.map((item, index) => (
               <div key={index}>
                 <h2 className="font-medium text-t12 md:text-t16 font-Archivo mb-4 text-b-white">
@@ -43,12 +40,15 @@ export default function Footer({}: Props) {
                 </h2>
                 <ul className="space-y-1">
                   {item.links.map((link, index) => (
-                    <li
-                      key={index}
-                      className="text-t10 md:text-t14 text-b-gray font-Archivo"
-                    >
-                      <Link href={link.href}>{link.name}</Link>
-                    </li>
+                    <Link href={link.href} className="hover:underline">
+                      {" "}
+                      <li
+                        key={index}
+                        className="text-t10 md:text-t14 text-b-gray font-Archivo"
+                      >
+                        {link.name}
+                      </li>
+                    </Link>
                   ))}
                 </ul>
               </div>

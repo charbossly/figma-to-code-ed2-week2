@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { fetchProducts } from "@/lib/api";
 import ProductItem from "./ProductItem";
 type Props = {
@@ -15,7 +13,7 @@ export default async function Recommandations({ product }: Props) {
     <div className="grid grid-flow-col gap-x-4">
       {" "}
       {products.map((prod: any, index: number) => (
-        <div className="w-[350px]" key={index}>
+        <div className="w-88" key={index}>
           <ProductItem key={prod.node.id} product={prod} />
         </div>
       ))}

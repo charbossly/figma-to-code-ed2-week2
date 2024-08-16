@@ -8,12 +8,27 @@ const config: Config = {
   ],
   theme: {
     screens: {
+      "b-sm": "335px",
       sm: "375px",
+      "b-md": "676px",
       md: "768px",
       lg: "1024px",
+      "b-xl": "1200px",
       xl: "1440px",
     },
     extend: {
+      spacing: {
+        "4.5": "18px",
+        "6.5": "26px",
+        "18": "72px",
+        "30": "120px",
+        "88": "350px",
+        "93": "372px",
+        "111": "446px",
+        "115": "460px",
+        "125": "500px",
+        "150": "600px",
+      },
       colors: {
         "b-white": "#FFFFFF",
         "b-light-gray": "#E5E5E5",
@@ -24,6 +39,7 @@ const config: Config = {
         "b-purple": "#393158",
         "b-ocean": "#2A5259",
         "b-olive": "#706947",
+        "b-stroke": "#4A4A4A",
       },
       fontFamily: {
         Archivo: ["Archivo", "sans-serif"],

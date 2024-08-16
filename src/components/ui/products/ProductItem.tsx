@@ -29,7 +29,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           </div>
         )}
 
-        <div className="hidden w-full  group-hover:flex justify-center absolute bottom-4 left-[50%] -translate-x-[50%]  px-4 gap-x-4">
+        <div className="hidden w-full  group-hover:flex justify-center absolute bottom-4 left-1/2 -translate-x-1/2  px-4 gap-x-4">
           <button
             onClick={() => addToCart(product)}
             className="flex-1 bg-white text-b-black px-2 xl:px-4 py-2 rounded-full uppercase flex gap-x-1 items-center text-t14 font-Archivo font-bold"
@@ -47,7 +47,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           </button>
         </div>
       </div>
-      <h3 className="text-xl font-bold mb-2 uppercase mt-[16px]">
+      <h3 className="text-xl font-bold mb-2 uppercase mt-4">
         <Link
           href={`/product-detail/${encodeURIComponent(product.node.id)}`}
           className="font-semibold font-Archivo text-t30"
@@ -55,7 +55,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           {product.node.title}
         </Link>
       </h3>
-      <p className="text-b-dark-gray font-Archivo  font-semibold text-t28 my-[2px]">
+      <p className="text-b-dark-gray font-Archivo  font-semibold text-t28 my-0.5">
         $ {product.node.variants.edges[0].node.price.amount}
       </p>
     </div>

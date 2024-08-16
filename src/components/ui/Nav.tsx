@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { NAVLINKSLEFT, NAVLINKSRIGHT, MOBILENAVLINKS } from "@/constants";
@@ -9,12 +9,12 @@ import { useCart } from "@/context/CartContext";
 type Props = {};
 
 export default function Nav({}: Props) {
-  const [isOpen, setIsOpen] = useState(false);
   const { cart } = useCart();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="xl:block">
-      <nav className="flex border-b border-b-b-light-gray xl:border-none justify-between items-center py-[26px] mx-auto xl:gap-x-24">
+      <nav className="flex border-b border-b-b-light-gray xl:border-none justify-between items-center py-6.5 mx-auto xl:gap-x-24">
         <div className="flex xl:hidden items-center">
           <Image
             className="cursor-pointer"
@@ -27,7 +27,7 @@ export default function Nav({}: Props) {
             onClick={() => setIsOpen(!isOpen)}
           />
         </div>
-        <div className="hidden xl:flex space-x-[18px]">
+        <div className="hidden xl:flex space-x-4.5">
           {NAVLINKSLEFT.map(
             (link: { name: string; href: string }, index: number) => (
               <Link
@@ -40,7 +40,7 @@ export default function Nav({}: Props) {
             )
           )}
         </div>
-        <h1 className="uppercase text-[#4a4a4a00] text-t30 font-Chillax  cursor-pointer font-semibold text-customStroke">
+        <h1 className="uppercase text-b-stroke text-t30 font-Chillax  cursor-pointer font-semibold text-customStroke">
           <Link href="/">Ballamas</Link>
         </h1>
         <div className="hidden xl:flex items-center space-x-6">
@@ -68,7 +68,7 @@ export default function Nav({}: Props) {
             <span>Account</span>
           </Link>
           <Link
-            href="#"
+            href="/cart"
             className="text-t16 font-Archivo font-normal text-b-black"
           >
             Cart({cart.length})
@@ -111,7 +111,7 @@ export default function Nav({}: Props) {
       </nav>
 
       {isOpen && (
-        <div className="pb-[200px] xl:pb-0 flex flex-col items-center gap-y-[18px] py-8">
+        <div className="pb-48 xl:pb-0 flex flex-col items-center gap-y-4.5 py-8">
           {[...NAVLINKSLEFT, ...NAVLINKSRIGHT].map(
             (link: { name: string; href: string }, index: number) => (
               <Link

@@ -17,7 +17,7 @@ export default function Page({}: Props) {
   } = useCart();
 
   return (
-    <div className=" flex flex-col items-center lg:flex-row  my-12 gap-[42px] lg:items-start">
+    <div className=" flex flex-col items-center lg:flex-row  my-12 gap-10 lg:items-start">
       <div className="w-full lg:w-2/3">
         <div className="flex justify-between items-center my-5">
           <h2 className="text-t24 font-Chillax font-semibold text-b-black">
@@ -25,7 +25,7 @@ export default function Page({}: Props) {
           </h2>
           <button
             onClick={clearCart}
-            className="flex items-center justify-center text-t12 font-medium font-Archivo text-b-dark-gray bg-[#E5E5E5] p-2 rounded-full"
+            className="flex items-center justify-center text-t12 font-medium font-Archivo text-b-dark-gray bg-b-light-gray p-2 rounded-full"
           >
             <Image
               src={"/images/trash.png"}
@@ -57,13 +57,10 @@ export default function Page({}: Props) {
                   {" "}
                   <td className="p-2 py-4">
                     <div className="flex flex-row gap-x-2 items-center relative">
-                      <div className="w-full h-[72px] overflow-hidden relative">
+                      <div className="w-full h-18 overflow-hidden relative">
                         <Image
                           src={item.node.featuredImage.url}
                           alt="image"
-                          //check if mobile or desktop
-                          //width={window.innerWidth > 768 ? 72 : 50}
-                          //height={window.innerWidth > 768 ? 72 : 50}
                           sizes="100vw, 72px"
                           fill
                           className="rounded-lg object-cover object-center"
@@ -84,7 +81,7 @@ export default function Page({}: Props) {
                     </div>
                   </td>
                   <td className="my-6 p-2 py-4 flex flex-row justify-center gap-x-1 items-center text-center ">
-                    <div className="text-secondary-foreground p-[0.5rem] space-x-2 md:space-x-4 px-2  rounded-full bg-[#E5E5E5] bg-opacity-65">
+                    <div className="text-secondary-foreground p-2 space-x-2 md:space-x-4 px-2  rounded-full bg-b-light-gray bg-opacity-65">
                       <button
                         onClick={() => decrementQuantity(item.node.id)}
                         className="text-secondary-foreground p-2 py-0 rounded-full border border-b-black"
@@ -101,7 +98,7 @@ export default function Page({}: Props) {
                     </div>
                     <button
                       onClick={() => removeFromCart(item.node.id)}
-                      className="md:p-2 rounded-full bg-[#E5E5E5] bg-opacity-65 flex items-center justify-center text-t12 font-medium font-Archivo text-b-dark-gray"
+                      className="md:p-2 rounded-full bg-b-light-gray bg-opacity-65 flex items-center justify-center text-t12 font-medium font-Archivo text-b-dark-gray"
                     >
                       <Image
                         src={"/images/trash.png"}

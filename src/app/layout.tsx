@@ -18,10 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"bg-b-white font-Archivo"}>
+      <body className="bg-b-white font-Archivo">
         <CartProvider>
           <Header />
-          <main className="min-h-screen relative w-full py-[40px]">
+          <main className="min-h-screen relative w-full py-10">
             <Layout>{children}</Layout>
           </main>
           <Footer />
