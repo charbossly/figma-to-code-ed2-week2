@@ -40,12 +40,13 @@ export default function Footer({}: Props) {
                 </h2>
                 <ul className="space-y-1">
                   {item.links.map((link, index) => (
-                    <Link href={link.href} className="hover:underline">
+                    <Link
+                      key={index}
+                      href={link.href}
+                      className="hover:underline"
+                    >
                       {" "}
-                      <li
-                        key={index}
-                        className="text-t10 md:text-t14 text-b-gray font-Archivo"
-                      >
+                      <li className="text-t10 md:text-t14 text-b-gray font-Archivo">
                         {link.name}
                       </li>
                     </Link>
