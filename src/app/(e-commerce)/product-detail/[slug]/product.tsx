@@ -30,7 +30,7 @@ export default function Product({ product: product }: Props) {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <>
       {product !== null ? (
         <>
           <div className="flex flex-col items-center justify-center gap-y-6 xl:gap-y-0 xl:flex-row">
@@ -141,6 +141,6 @@ export default function Product({ product: product }: Props) {
           <p>Product not found</p>
         </div>
       )}{" "}
-    </Suspense>
+    </>
   );
 }

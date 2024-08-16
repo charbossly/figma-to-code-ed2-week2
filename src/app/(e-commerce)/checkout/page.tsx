@@ -295,7 +295,7 @@ const Checkout = () => {
           <h3 className="text-lg font-medium mt-8 mb-2">
             Select payment method
           </h3>
-          <div className="space-y-2 flex flex-col md:flew-row space-x-2">
+          <div className="space-y-2 flex flex-col md:flex-row space-x-2 md:space-y-0">
             <label className="group group-hover:border-b-black w-1/2 flex flex-col  gap-y-2 border border-gray-300 p-2 rounded-lg">
               <input
                 type="radio"

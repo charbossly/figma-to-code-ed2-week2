@@ -1,6 +1,5 @@
 // lib/api.ts
 import axios from "axios";
-import { count } from "console";
 
 const apiClient = axios.create({
   baseURL: "https://mock.shop/api",
@@ -52,38 +51,6 @@ export const fetchProducts = async () => {
     console.error("Network or API error:", error.message || error);
     return [];
   }
-  const response = await apiClient.post("", {
-    query: `
-        query 
-          {
-            products(first: 10) {
-                edges {
-                node {
-                    id
-                    title
-                    description
-                    availableForSale
-                    featuredImage {
-                        url
-                    }
-                    tags
-                    variants(first: 1) {
-                        edges {
-                            node {
-                                price {
-                                    amount
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        }
-      `,
-  });
-
-  return response.data.data.products.edges;
 };
 
 //fetching product by id
@@ -93,7 +60,7 @@ export const fetchProductById = async (id: string) => {
       query: `
             query($id: ID!) {
               product(id: $id) {
-                    id
+                    id  
                     title
                     description
                     featuredImage {
@@ -159,6 +126,53 @@ export const fetchTags = async () => {
     return [];
   }
 };
+
+//fetching products by categories
+export const fetchProductsByCategories = async (tag: string) => {
+  try {
+    const response = await apiClient.post("", {
+      query: `
+        query($tag: String) {
+          products(first:200, query:$tag) {
+            edges {
+                node {
+                    id
+                    title
+                    description
+                    availableForSale
+                    featuredImage {
+                        url
+                    }
+                    tags
+                    variants(first: 4) {
+                        edges {
+                            node {
+                                price {
+                                    amount
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+          }
+        }
+      `,
+      variables: { tag },
+    });
+    console.log(response.data.data.products.edges);
+    if (response.data && response.data.data && response.data.data.products) {
+      return response.data.data.products.edges;
+    } else {
+      console.error("Invalid response structure:", response.data);
+      return [];
+    }
+  } catch (error: any) {
+    console.error("Network or API error:", error.message || error);
+    return [];
+  }
+};
+
 //get count of categories
 export const fetchTagsCount = async (tag: string[]) => {
   const counts = [];

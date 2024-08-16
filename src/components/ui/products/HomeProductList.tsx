@@ -61,9 +61,8 @@ function HomeProductList({ categories, products, categoriesCount }: Props) {
       <div className="flex justify-center my-4">
         <Link
           className="align-middle text-t14 font-Archivo font-semibold border border-b-black p-3 rounded-full text-b-black hover:bg-b-gray transition"
-          href="#"
+          href="/search"
         >
-          {" "}
           View More
         </Link>
       </div>
